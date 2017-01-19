@@ -1,5 +1,5 @@
 # ibmprices
-The following are homework assignments, with solution files listed below
+The following are homework assignments, with solution files listed below:
 Assignment: Write a command line app which gets IBM prices from Yahoo and writes them to a CSV file.
 Files: IBM_Prices.py, prices_IBM.csv
 
