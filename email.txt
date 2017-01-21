@@ -1,0 +1,71 @@
+
+The files I created for all 4 of your assignments are at
+https://github.com/stevesiegel/ibmprices.
+
+Note that for the moving average png file I had trouble figuring out
+how to format the x axis with dates.
+
+I would appreciate it if you could look at my Python
+script and suggest how to add the x-axis dates, as well as legend
+showing the name of each curve associated with each color.
+
+Thanks.
+
+Dear Student,
+
+I am not very skilled at enhancing x-axis and legend.
+
+I did, however, enhance your work a little:
+
+https://github.com/danbikle/ibmprices/blob/master/dan_ibm_prices3.py
+
+My general approach to plotting time-series is to sort and load the dates into a DF column.
+
+I like that to be the first column.
+
+I then see that column as almost ready for giving me x-values.
+
+Next I will fill the 2nd column with data for the y-axis.
+
+And I will fill the 3rd,4th,5th columns with data if I want more than 1 line.
+
+In this case I want a line for price and a line for mvg avg.
+
+After I fill col-2 with price and col-3 with mvg avg, I return my attention to col-1 full of date-strings.
+
+I use a comprehension to convert each string to a date:
+
+date_dt_l = [datetime.strptime(day_s, '%Y-%m-%d') for day_s in prices3_df.date_s]
+
+Then I add the resulting List to the DF as a col-4.
+
+Now I dont need col-1 ; I want to delete it.
+
+I do this by creating a new DF from col-2,col-3,col-4.
+
+During that creation I reorder the columns so col-4 is col-1.
+
+Next I convert col-1 to an index.
+
+Now I have a DF with two columns (price, and price_ma) and that DF has index full of sorted dates.
+
+Now I can do this:
+
+my_df.plot.line(title="My Plot")
+
+Then Pandas teams up with matplotlib to give me an okay-plot.
+
+I noticed that you did not try to combine Pandas with matplotlib.
+
+You did this instead:
+
+plt.plot(ibm_price,'r',ibm_price_ma,'b')
+
+I see that as 'pure matplotlib, no Pandas'.
+
+That is an okay path to take if you want to learn all the ins-outs of matplotlib.
+
+I've tried doing that in the past and it can get difficult and tedious.
+
+Sincerely, Dan Bikle
+
