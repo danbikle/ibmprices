@@ -7,7 +7,7 @@ Assignment: Write a command line app which gets IBM prices from a CSV file and p
 Files: Read_and_plot_IBM_Prices.py, IBM_Prices.png
 
 Assignment:Write a command line app which gets IBM prices from a CSV file and calculates the 10-day moving avg for each price and writes it to a CSV file.
-Files:
+Files: matest3.py, moving_avg_IBM.csv
 
 Assignment: Write a command line app which plots IBM prices and 10-day moving avg into a PNG file.
-Files:
+Files: ma_plot.py, IBM_Prices_MA.png
